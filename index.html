@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kb·expert — Interogare E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav" aria-label="Navigare principală">
+        <a class="brand" href="#">kb·expert</a>
+        <div class="nav-links">
+            <a class="nav-current" href="#interogare">Interogare</a>
+            <a href="#inspector">Baza de cunoștințe (XML)</a>
+        </div>
+        <span class="xml-status">date.xml Tema SBC</span>
+    </nav>
+
+    <main class="page-wrapper">
+        <header class="hero-header">
+            <span class="eyebrow">SISTEM EXPERT · E-COMMERCE</span>
+            <h1>Cautarea nu a fost niociodata mai <span>usoara.</span></h1>
+            <p class="subtitle">Caută un produs sau un utilizator, ori alege criteriile. Concluziile se actualizează pe loc.</p>
+        </header>
+
+        <section class="search-section" id="interogare" aria-label="Căutare în baza de cunoștințe">
+            <div class="search-input-wrapper">
+                <input type="text" id="natural-search" placeholder="Ex: geaca_iarna, recomandări pentru andrei, produse în stoc..." autocomplete="off" aria-label="Caută în concluziile deduse">
+            </div>
+        </section>
+
+        <section class="filters-grid">
+            <div class="filter-group">
+                <span class="filter-label">1 · CONCLUZIE / REGULĂ</span>
+                <div class="pills-container" id="pills-reguli"></div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-label">2 · PROFIL UTILIZATOR</span>
+                <div class="pills-container" id="pills-useri"></div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-label">3 · CATEGORIE PRODUS</span>
+                <div class="pills-container" id="pills-categorii"></div>
+            </div>
+        </section>
+
+        <div class="results-meta">
+            <span id="results-count">Se încarcă baza de cunoștințe...</span>
+            <button id="btn-clear" class="clear-btn" type="button">Resetează tot</button>
+        </div>
+
+        <section id="results-grid" class="cards-grid"></section>
+
+        <section class="insight-panel" id="selected-insight" aria-live="polite" hidden>
+            <div>
+                <span class="insight-label">DE CE REZULTATUL?</span>
+                <strong id="insight-title"></strong>
+                <p id="insight-description"></p>
+            </div>
+            <div class="insight-evidence">
+                <span class="insight-label">REGULĂ ȘI CONTEXT</span>
+                <code id="insight-rule"></code>
+                <p id="insight-facts"></p>
+            </div>
+        </section>
+
+        <footer class="xml-inspector" id="inspector">
+            <details>
+                <summary>Inspector XML (<span id="count-fapte">0</span> fapte & <span id="count-reguli">0</span> reguli parsate)</summary>
+                <div class="inspector-columns">
+                    <div>
+                        <h4>Reguli IF ... AND ... THEN</h4>
+                        <ul id="lista-reguli-xml"></ul>
+                    </div>
+                    <div>
+                        <h4>Fapte din baza XML</h4>
+                        <ul id="lista-fapte-xml"></ul>
+                    </div>
+                </div>
+            </details>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
