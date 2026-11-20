@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<date>
+
+    <!-- ====================  FAPTE  ==================== -->
+    <fapte>
+        <!-- Utilizatori -->
+        <user nume="andrei" varsta="24" abonament="standard" mediu="urban" />
+        <user nume="maria" varsta="31" abonament="premium" mediu="urban" />
+        <user nume="elena" varsta="45" abonament="premium" mediu="rural" />
+        <user nume="vlad" varsta="19" abonament="standard" mediu="urban" />
+        <user nume="ioana" varsta="29" abonament="vip" mediu="urban" />
+        <user nume="george" varsta="52" abonament="standard" mediu="rural" />
+        <user nume="cristina" varsta="36" abonament="vip" mediu="rural" />
+        <user nume="mihai" varsta="27" abonament="standard" mediu="urban" />
+
+        <!-- Produse -->
+        <produs nume="laptop_gaming" categorie="electronice" pret="4500" stoc="12" />
+        <produs nume="casti_wireless" categorie="electronice" pret="350" stoc="45" />
+        <produs nume="smartphone" categorie="electronice" pret="2800" stoc="20" />
+        <produs nume="geaca_iarna" categorie="imbracaminte" pret="420" stoc="30" />
+        <produs nume="adidasi_alergare" categorie="imbracaminte" pret="310" stoc="25" />
+        <produs nume="carte_programare" categorie="carti" pret="120" stoc="60" />
+        <produs nume="roman_politist" categorie="carti" pret="55" stoc="80" />
+        <produs nume="crema_fata" categorie="cosmetice" pret="180" stoc="40" />
+        <produs nume="parfum_lux" categorie="cosmetice" pret="520" stoc="15" />
+        <produs nume="espressor_cafea" categorie="electrocasnice" pret="1100" stoc="10" />
+
+        <!-- Istoric achizitii -->
+        <cumparat utilizator="andrei" produs="casti_wireless" cantitate="1" />
+        <cumparat utilizator="andrei" produs="carte_programare" cantitate="2" />
+        <cumparat utilizator="maria" produs="crema_fata" cantitate="2" />
+        <cumparat utilizator="maria" produs="parfum_lux" cantitate="1" />
+        <cumparat utilizator="elena" produs="espressor_cafea" cantitate="1" />
+        <cumparat utilizator="vlad" produs="adidasi_alergare" cantitate="1" />
+        <cumparat utilizator="ioana" produs="smartphone" cantitate="1" />
+        <cumparat utilizator="ioana" produs="parfum_lux" cantitate="2" />
+        <cumparat utilizator="cristina" produs="laptop_gaming" cantitate="1" />
+        <cumparat utilizator="cristina" produs="geaca_iarna" cantitate="2" />
+
+        <!-- Navigare -->
+        <vizualizari utilizator="andrei" categorie="electronice" nr_vizualizari="18" />
+        <vizualizari utilizator="maria" categorie="cosmetice" nr_vizualizari="25" />
+        <vizualizari utilizator="elena" categorie="electrocasnice" nr_vizualizari="12" />
+        <vizualizari utilizator="vlad" categorie="electronice" nr_vizualizari="30" />
+        <vizualizari utilizator="ioana" categorie="cosmetice" nr_vizualizari="15" />
+        <vizualizari utilizator="george" categorie="carti" nr_vizualizari="9" />
+        <vizualizari utilizator="cristina" categorie="electronice" nr_vizualizari="22" />
+        <vizualizari utilizator="mihai" categorie="imbracaminte" nr_vizualizari="4" />
+
+        <!-- Timp pe site -->
+        <timp_pe_site utilizator="andrei" minute="22" />
+        <timp_pe_site utilizator="maria" minute="35" />
+        <timp_pe_site utilizator="elena" minute="14" />
+        <timp_pe_site utilizator="vlad" minute="40" />
+        <timp_pe_site utilizator="ioana" minute="28" />
+        <timp_pe_site utilizator="george" minute="6" />
+        <timp_pe_site utilizator="cristina" minute="31" />
+        <timp_pe_site utilizator="mihai" minute="3" />
+
+        <!-- Recency, Frequency, Monetary -->
+        <recency utilizator="andrei" zile="12" />
+        <recency utilizator="maria" zile="4" />
+        <recency utilizator="elena" zile="45" />
+        <recency utilizator="vlad" zile="20" />
+        <recency utilizator="ioana" zile="2" />
+        <recency utilizator="george" zile="120" />
+        <recency utilizator="cristina" zile="7" />
+        <recency utilizator="mihai" zile="95" />
+
+        <frequency utilizator="andrei" comenzi="4" />
+        <frequency utilizator="maria" comenzi="9" />
+        <frequency utilizator="elena" comenzi="2" />
+        <frequency utilizator="vlad" comenzi="3" />
+        <frequency utilizator="ioana" comenzi="12" />
+        <frequency utilizator="george" comenzi="1" />
+        <frequency utilizator="cristina" comenzi="8" />
+        <frequency utilizator="mihai" comenzi="0" />
+
+        <monetary utilizator="andrei" total="590" />
+        <monetary utilizator="maria" total="2400" />
+        <monetary utilizator="elena" total="1100" />
+        <monetary utilizator="vlad" total="310" />
+        <monetary utilizator="ioana" total="5200" />
+        <monetary utilizator="george" total="55" />
+        <monetary utilizator="cristina" total="6800" />
+        <monetary utilizator="mihai" total="0" />
+
+        <!-- Cosuri abandonate -->
+        <cos_abandonat utilizator="vlad" produs="laptop_gaming" valoare="4500" />
+        <cos_abandonat utilizator="george" produs="roman_politist" valoare="55" />
+        <cos_abandonat utilizator="mihai" produs="geaca_iarna" valoare="420" />
+        <cos_abandonat utilizator="andrei" produs="smartphone" valoare="2800" />
+
+        <!-- Praguri si reduceri -->
+        <constanta nume="prag_vip" valoare="1500" />
+        <constanta nume="reducere_loialitate" valoare="15" />
+        <constanta nume="taxa_livrare_rural" valoare="25" />
+        <constanta nume="taxa_livrare_urban" valoare="12" />
+    </fapte>
+
+    <!-- ========  REGULI ======== -->
+    <reguli>
+        <regula id="R1">
+            <if operator="AND">
+                <conditie tip="fapt" nume="user" camp="varsta" op="&lt;" valoare="30" />
+            </if>
+            <then concluzie="user_tanar" />
+        </regula>
+
+        <regula id="R2">
+            <if operator="AND">
+                <conditie tip="fapt" nume="user" camp="abonament" op="==" valoare="premium" />
+            </if>
+            <then concluzie="user_loial" />
+        </regula>
+
+        <regula id="R3">
+            <if operator="AND">
+                <conditie tip="fapt" nume="user" camp="abonament" op="==" valoare="vip" />
+            </if>
+            <then concluzie="user_loial" />
+        </regula>
+
+        <regula id="R4">
+            <if operator="AND">
+                <conditie tip="fapt" nume="produs" camp="pret" op="&gt;=" valoare="1000" />
+            </if>
+            <then concluzie="produs_scump" />
+        </regula>
+
+        <regula id="R5">
+            <if operator="AND">
+                <conditie tip="fapt" nume="produs" camp="pret" op="&lt;" valoare="400" />
+            </if>
+            <then concluzie="produs_accesibil" />
+        </regula>
+
+        <regula id="R6">
+            <if operator="AND">
+                <conditie tip="fapt" nume="produs" camp="stoc" op="&gt;" valoare="0" />
+            </if>
+            <then concluzie="in_stoc" />
+        </regula>
+
+        <regula id="R7">
+            <if operator="AND">
+                <conditie tip="fapt" nume="monetary" camp="total" op="&gt;=" valoare="1500" />
+            </if>
+            <then concluzie="client_mare" />
+        </regula>
+
+        <regula id="R8">
+            <if operator="AND">
+                <conditie tip="fapt" nume="vizualizari" camp="nr_vizualizari" op="&gt;=" valoare="15" />
+            </if>
+            <then concluzie="interes_ridicat" />
+        </regula>
+
+        <regula id="R9">
+            <if operator="AND">
+                <conditie tip="fapt" nume="timp_pe_site" camp="minute" op="&gt;=" valoare="20" />
+            </if>
+            <then concluzie="engagement_ridicat" />
+        </regula>
+
+        <regula id="R10">
+            <if operator="AND">
+                <conditie tip="fapt" nume="cos_abandonat" camp="valoare" op="&gt;=" valoare="400" />
+            </if>
+            <then concluzie="risc_abandon_ridicat" />
+        </regula>
+
+        <regula id="R11">
+            <if operator="AND">
+                <conditie tip="regula" nume="user_tanar" />
+                <conditie tip="regula" nume="engagement_ridicat" />
+                <conditie tip="regula" nume="interes_ridicat" />
+            </if>
+            <then concluzie="cumparator_impulsiv" />
+        </regula>
+
+        <regula id="R12">
+            <if operator="AND">
+                <conditie tip="regula" nume="interes_ridicat" />
+                <conditie tip="regula" nume="in_stoc" />
+                <conditie tip="fapt" nume="cumparat" op="not_exists" />
+            </if>
+            <then concluzie="recomanda_produs" />
+        </regula>
+
+        <regula id="R13">
+            <if operator="AND">
+                <conditie tip="fapt" nume="cos_abandonat" op="exists" />
+                <conditie tip="regula" nume="in_stoc" />
+                <conditie tip="fapt" nume="user" camp="abonament" op="==" valoare="standard" />
+            </if>
+            <then concluzie="eligibil_voucher" />
+        </regula>
+
+        <regula id="R14">
+            <if operator="AND">
+                <conditie tip="fapt" nume="user" camp="abonament" op="==" valoare="standard" />
+                <conditie tip="regula" nume="interes_ridicat" />
+                <conditie tip="fapt" nume="frequency" camp="comenzi" op="&gt;=" valoare="3" />
+            </if>
+            <then concluzie="candidat_upgrade_vip" />
+        </regula>
+
+        <regula id="R15">
+            <if operator="AND">
+                <conditie tip="regula" nume="user_loial" />
+                <conditie tip="regula" nume="interes_ridicat" />
+                <conditie tip="regula" nume="produs_scump" />
+            </if>
+            <then concluzie="oferta_exclusiva" />
+        </regula>
+
+        <regula id="R16">
+            <if operator="AND">
+                <conditie tip="fapt" nume="recency" camp="zile" op="&gt;" valoare="60" />
+            </if>
+            <then concluzie="client_inactiv" />
+        </regula>
+
+        <regula id="R17">
+            <if operator="AND">
+                <conditie tip="fapt" nume="user" camp="mediu" op="==" valoare="urban" />
+                <conditie tip="fapt" nume="produs" camp="pret" op="&lt;" valoare="1000" />
+                <conditie tip="regula" nume="in_stoc" />
+            </if>
+            <then concluzie="eligibil_easybox" />
+        </regula>
+    </reguli>
+
+</date>
